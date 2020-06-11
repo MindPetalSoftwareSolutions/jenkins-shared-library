@@ -1,5 +1,5 @@
-def call(String tenant) {
-    withEnv(['url=https://uipath.verticalapps.com', 'tenancy='+tenant]) {
+def call(String tenant, long folderId, long environmentId) {
+    withEnv(['url=https://uipath.verticalapps.com', 'tenancy='+tenant, 'folderId='+folderId, 'environmentId='+environmentId]) {
         withCredentials([usernamePassword( credentialsId: 'orchestrator-authentication', 
                         usernameVariable: 'user', passwordVariable: 'pwd' )]) {
 
