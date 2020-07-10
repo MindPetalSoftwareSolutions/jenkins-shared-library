@@ -61,28 +61,28 @@ To use the jenkins shared library you will need to put a jenkinsfile in the root
     @Library('jenkins-shared-library@master') _
 
     pipeline {
-        agent any
-        stages {
-            stage('Git Checkout') {
-                steps {
-                    gitCheckout(
-                        branch: "master",
-                        url: 'https://github.com/VerticalApps-DevOps/mpldemo.git'
-                    )
-                }
-            }
-            stage('Build') {
-                steps {
-                    powershell returnStatus: true, script: '.\\build.ps1'
-                }
-            }
-            stage('Post-Build') {
-                steps {
-                    postBuild()
-                }
-            }
-        }
-    }
+      agent any
+      stages {
+          stage('Sonar') {
+              steps {
+                  sonarQubeScan()
+              }
+          }
+          stage('Pack and Publish') {
+              steps {
+                  script {
+                      orchPublish("VerticalApps", "Test") 
+                  }
+              }
+          }
+          stage('Post-Build') {
+              steps {
+                  postBuild()
+              }
+          }
+      }
+
+    
 
 ## Library Details
 
