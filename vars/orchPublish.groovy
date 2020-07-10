@@ -1,4 +1,4 @@
-def call(String tenant, String folderName) {
+def call(String tenant, String envrionmentName) {
     withEnv(['url=https://uipath.verticalapps.com', 'tenancy='+tenant, 'environmentName='+environmentName]) {
         withCredentials([usernamePassword( credentialsId: 'MFOrchestrator', 
                         usernameVariable: 'user', passwordVariable: 'pwd' )]) {
