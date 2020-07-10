@@ -57,7 +57,7 @@ foreach($i in $tenantenvs) {
 
 $release = @{
    Name = $project.name + "_" + $env:environmentId
-   EnvironmentId = $env:environmentId
+   EnvironmentId = $envId
    ProcessKey = $project.name
    ProcessVersion = $project.projectVersion
    packageVersion = $project.projectVersion
