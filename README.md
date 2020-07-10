@@ -100,7 +100,7 @@ This shared library is specific to publishing to Modern Folders in UiPath Orches
 
 ### Authentication
 
-Call to [UiPath Authentication API](https://docs.uipath.com/orchestrator/v2019/reference/authenticating)
+Call to [UiPath Authentication API](https://docs.uipath.com/orchestrator/v2019/reference/authenticating) for the tenant defined in the Jenkinsfile
 
 ### Publish
 
@@ -108,7 +108,7 @@ Call to [Publish](https://docs.uipath.com/orchestrator/v2019/reference/packages-
 
 ### Process Creation
 
-Conditional call to either [create a new process or update an existing process](https://docs.uipath.com/orchestrator/v2019/reference/processes-requests) in the folder defined in the Jenkinsfile example
+Conditional call to either [create a new process or update an existing process](https://docs.uipath.com/orchestrator/v2019/reference/processes-requests) in the environment defined in the Jenkinsfile example
 
 
 ## More Information
